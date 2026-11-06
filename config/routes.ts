@@ -207,6 +207,146 @@ const routes = [
       },
     ],
   },
+  // AFRIBID Marketplace（独立前台，不走后台 Layout / RouteGuard）
+  {
+    path: '/afribid',
+    component: '@/layouts/AfribidLayout',
+    layout: false,
+    meta: { auth: false },
+    routes: [
+      { path: '/afribid', redirect: '/afribid/home' },
+      {
+        path: '/afribid/home',
+        component: 'Afribid/Home',
+        meta: { title: 'Home', auth: false },
+      },
+      {
+        path: '/afribid/vehicles',
+        component: 'Afribid/Vehicles',
+        meta: { title: 'Vehicles', auth: false },
+      },
+      {
+        path: '/afribid/vehicle/:id',
+        component: 'Afribid/VehicleDetail',
+        meta: { title: 'Vehicle', auth: false },
+      },
+      {
+        path: '/afribid/auctions',
+        component: 'Afribid/Auctions',
+        meta: { title: 'Live auctions', auth: false },
+      },
+      {
+        path: '/afribid/live/:id',
+        component: 'Afribid/Live',
+        meta: { title: 'Live room', auth: false },
+      },
+      {
+        path: '/afribid/calendar',
+        component: 'Afribid/Calendar',
+        meta: { title: 'Auction calendar', auth: false },
+      },
+      {
+        path: '/afribid/login',
+        component: 'Afribid/Login',
+        meta: { title: 'Sign in', auth: false },
+      },
+      {
+        path: '/afribid/register',
+        component: 'Afribid/Register',
+        meta: { title: 'Register', auth: false },
+      },
+      {
+        path: '/afribid/account',
+        component: 'Afribid/Account',
+        meta: { title: 'My account', auth: false },
+      },
+      {
+        path: '/afribid/account/profile',
+        component: 'Afribid/Account/Profile',
+        meta: { title: 'Profile', auth: false },
+      },
+      {
+        path: '/afribid/account/verification',
+        component: 'Afribid/Account/Verification',
+        meta: { title: 'Verification', auth: false },
+      },
+      {
+        path: '/afribid/account/wallet',
+        component: 'Afribid/Account/Wallet',
+        meta: { title: 'Wallet', auth: false },
+      },
+      {
+        path: '/afribid/account/auctions',
+        component: 'Afribid/Account/Auctions',
+        meta: { title: 'My auctions', auth: false },
+      },
+      {
+        path: '/afribid/account/watchlist',
+        component: 'Afribid/Account/Watchlist',
+        meta: { title: 'Watchlist', auth: false },
+      },
+      {
+        path: '/afribid/account/inquiries',
+        component: 'Afribid/Account/Inquiries',
+        meta: { title: 'Inquiries', auth: false },
+      },
+      {
+        path: '/afribid/account/orders',
+        component: 'Afribid/Account/Orders',
+        meta: { title: 'Orders', auth: false },
+      },
+      {
+        path: '/afribid/account/notifications',
+        component: 'Afribid/Account/Notifications',
+        meta: { title: 'Notifications', auth: false },
+      },
+      {
+        path: '/afribid/inquiry/:id',
+        component: 'Afribid/Inquiry',
+        meta: { title: 'Inquiry', auth: false },
+      },
+      {
+        path: '/afribid/order/:id',
+        component: 'Afribid/Order',
+        meta: { title: 'Order', auth: false },
+      },
+      {
+        path: '/afribid/how-it-works',
+        component: 'Afribid/Info/HowItWorks',
+        meta: { title: 'How it works', auth: false },
+      },
+      {
+        path: '/afribid/deposits',
+        component: 'Afribid/Info/Deposits',
+        meta: { title: 'Deposits', auth: false },
+      },
+      {
+        path: '/afribid/help',
+        component: 'Afribid/Info/Help',
+        meta: { title: 'Help', auth: false },
+      },
+      {
+        path: '/afribid/contact',
+        component: 'Afribid/Info/Contact',
+        meta: { title: 'Contact', auth: false },
+      },
+      {
+        path: '/afribid/terms',
+        component: 'Afribid/Info/Terms',
+        meta: { title: 'Terms', auth: false },
+      },
+      {
+        path: '/afribid/privacy',
+        component: 'Afribid/Info/Privacy',
+        meta: { title: 'Privacy', auth: false },
+      },
+      {
+        path: '/afribid/restricted',
+        component: 'Afribid/Info/Restricted',
+        meta: { title: 'Restricted', auth: false },
+      },
+    ],
+  },
   {
     path: '*',
     layout: false,
