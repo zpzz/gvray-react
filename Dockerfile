@@ -90,12 +90,12 @@ RUN mkdir -p /var/log/nginx && \
 # 切换到非 root 用户
 USER webapp
 
-# 暴露端口
-EXPOSE 80
+# 非 root 用户无法绑定 <1024 端口，容器内监听 8080
+EXPOSE 8080
 
 # 健康检查
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost/health || exit 1
+    CMD curl -f http://localhost:8080/health || exit 1
 
 # 启动 nginx
 CMD ["nginx", "-g", "daemon off;"]

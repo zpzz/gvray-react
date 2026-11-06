@@ -94,11 +94,11 @@ start_container() {
         --name "${CONTAINER_NAME}" \
         --platform "${PLATFORM}" \
         --restart unless-stopped \
-        -p 8080:80 \
+        -p 3000:8080 \
         -e TZ=Asia/Shanghai \
         -e NODE_ENV="${ENVIRONMENT}" \
         -v "$(pwd)/logs/nginx:/var/log/nginx" \
-        --health-cmd="curl -f http://localhost/health || exit 1" \
+        --health-cmd="curl -f http://localhost:8080/health || exit 1" \
         --health-interval=30s \
         --health-timeout=3s \
         --health-retries=3 \

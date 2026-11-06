@@ -24,7 +24,7 @@
     "docker:compose:up": "docker-compose up -d",
     "docker:deploy": "tsx scripts/docker-deploy.ts",
     "docker:logs": "docker logs -f gvray-react-web",
-    "docker:run": "docker run -d --name gvray-react-web -p 8080:80 gvray/gvray-react:latest",
+    "docker:run": "docker run -d --name gvray-react-web -p 3000:8080 gvray/gvray-react:latest",
     "docker:stop": "docker stop gvray-react-web && docker rm gvray-react-web",
     "gen:api": "tsx scripts/gen-api-types.ts",
     "postinstall": "umi setup",
